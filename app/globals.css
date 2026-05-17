@@ -1,0 +1,129 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-lavender text-ink antialiased;
+  font-family: var(--font-body), sans-serif;
+}
+
+* {
+  @apply border-lavender-dark/30;
+}
+
+::selection {
+  background: rgba(91, 79, 214, 0.2);
+  color: #1A1035;
+}
+
+a:focus:not(:focus-visible),
+button:focus:not(:focus-visible) {
+  outline: none;
+}
+
+.container-shell {
+  @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+}
+
+.section-pad {
+  @apply py-20 sm:py-28 lg:py-32;
+}
+
+/* Announcement bar marquee */
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll 28s linear infinite;
+}
+
+/* Large hero letters */
+.hero-wordmark {
+  font-family: var(--font-display), cursive;
+  font-weight: 800;
+  font-size: clamp(120px, 20vw, 260px);
+  line-height: 0.85;
+  color: white;
+  letter-spacing: -0.02em;
+  -webkit-text-stroke: 0px transparent;
+  paint-order: stroke fill;
+  filter: drop-shadow(0 8px 32px rgba(91, 79, 214, 0.15));
+}
+
+/* Colored highlight words in headings */
+.highlight-coral {
+  color: #F97316;
+}
+.highlight-brand {
+  color: #5B4FD6;
+}
+.highlight-green {
+  color: #22C55E;
+}
+.highlight-yellow {
+  color: #D97706;
+}
+
+/* Section heading style matching lesa */
+.section-heading {
+  @apply font-display text-4xl leading-tight text-ink sm:text-5xl lg:text-6xl;
+}
+
+/* Decorative dot/star scattered elements */
+.deco {
+  position: absolute;
+  pointer-events: none;
+}
+
+/* Smooth image rendering */
+img {
+  image-rendering: -webkit-optimize-contrast;
+}
+
+/* Pill badge */
+.pill {
+  @apply inline-flex items-center gap-2 rounded-full bg-white/80 px-4 py-2 text-xs font-extrabold uppercase tracking-widest text-brand shadow-card;
+}
+
+@keyframes marquee-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* ── Custom scrollbar ── */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.06);
+  border-radius: 999px;
+  margin: 4px;
+}
+::-webkit-scrollbar-button {
+  display: none;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #C026D3 0%, #7C3AED 45%, #4F46E5 100%);
+  border-radius: 999px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+  box-shadow: 0 2px 8px rgba(124, 58, 237, 0.35);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #D946EF 0%, #8B5CF6 45%, #6366F1 100%);
+  background-clip: padding-box;
+  box-shadow: 0 2px 12px rgba(124, 58, 237, 0.55);
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #7C3AED rgba(0, 0, 0, 0.06);
+}
