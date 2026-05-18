@@ -51,24 +51,6 @@ Parents get a real-time dashboard. Kids get an adventure.
 
 ---
 
-## Getting Started
-
-```bash
-# Clone
-git clone https://github.com/pratxf/Kiwo.git
-cd Kiwo
-
-# Install
-npm install
-
-# Run dev server
-npm run dev
-```
-
-Open [http://localhost:3000](http://localhost:3000).
-
----
-
 ## Project Structure
 
 ```
