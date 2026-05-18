@@ -1186,7 +1186,7 @@ function Footer() {
           <div>
             <p className="text-xs font-extrabold uppercase tracking-widest" style={{ color: `${DARK}55` }}>Newsletter</p>
             <div className="mt-4 flex flex-col gap-3 sm:flex-row lg:flex-col xl:flex-row">
-              <div className="flex flex-1 items-center gap-2 rounded-full px-4 py-3 ring-1" style={{ ringColor: `${DARK}20` }}>
+              <div className="flex flex-1 items-center gap-2 rounded-full px-4 py-3" style={{ boxShadow: `0 0 0 1px ${DARK}20` }}>
                 <Mail className="h-4 w-4" style={{ color: `${DARK}40` }} />
                 <input type="email" placeholder="Parent email" className="w-full bg-transparent text-sm font-semibold outline-none" style={{ color: DARK }} />
               </div>
