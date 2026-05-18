@@ -482,7 +482,7 @@ function Feature1() {
           Every child<br />learns <span style={{ color: ORANGE }}>differently</span>
         </h2>
         <p className="mt-6 max-w-md text-lg leading-relaxed" style={{ color: `${DARK}58` }}>
-          Kiwo adapts to each child's pace, style, and strengths, adjusting difficulty, content, and feedback in real time so every lesson feels just right, not too easy, never too hard.
+          Kiwo adapts to each child&apos;s pace, style, and strengths, adjusting difficulty, content, and feedback in real time so every lesson feels just right, not too easy, never too hard.
         </p>
         <Link href="#pricing" className="mt-8 inline-flex items-center gap-2 text-sm font-extrabold transition hover:gap-3" style={{ color: ORANGE }}>
           Learn more <ArrowRight className="h-4 w-4" />
@@ -898,6 +898,7 @@ function SubjectsSection() {
     build();
     window.addEventListener("resize", build);
     return () => window.removeEventListener("resize", build);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
