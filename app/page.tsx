@@ -163,6 +163,16 @@ function LeftSidebar() {
   return (
     <>
       <FullScreenMenu open={menuOpen} onClose={() => setMenuOpen(false)} />
+      {/* Mobile hamburger — only on small screens */}
+      <button
+        type="button"
+        aria-label="Open menu"
+        onClick={() => setMenuOpen(true)}
+        className="fixed left-4 top-4 z-50 flex h-9 w-9 items-center justify-center rounded-full shadow-md transition hover:bg-black/5 lg:hidden"
+        style={{ background: "white", color: DARK }}
+      >
+        <Menu className="h-4 w-4" />
+      </button>
       <div
         className="fixed left-0 top-0 z-50 hidden h-screen w-[52px] flex-col items-center justify-between border-r py-5 lg:flex"
         style={{ background: "white", borderColor: "rgba(0,0,0,0.08)" }}
@@ -237,7 +247,7 @@ function HeroSection() {
         <div className="mt-14 max-w-lg lg:ml-[140px] lg:mt-20">
           <motion.h1
             className="font-display font-extrabold leading-[1.05] text-white"
-            style={{ fontSize: "clamp(40px, 5.5vw, 76px)" }}
+            style={{ fontSize: "clamp(28px, 5.5vw, 76px)" }}
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.15, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
@@ -290,7 +300,7 @@ function HeroSection() {
       {/* ── FEATURE CARDS — pinned to bottom ── */}
       {/* ── FEATURE CARDS ── */}
       <motion.div
-        className="absolute bottom-0 left-0 right-0 z-10 flex justify-center gap-4 px-6 pb-8 lg:px-16"
+        className="absolute bottom-0 left-0 right-0 z-10 grid grid-cols-2 gap-2 px-3 pb-3 sm:flex sm:justify-center sm:gap-4 sm:px-6 sm:pb-8 lg:px-16"
         initial={{ opacity: 0, y: 24 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.7, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
@@ -339,7 +349,7 @@ function MissionStatement() {
       <motion.div style={{ x: x1 }} className="whitespace-nowrap">
         <span
           className="font-display font-extrabold leading-none"
-          style={{ fontSize: "clamp(56px, 8vw, 110px)", color: "rgba(255,255,255,0.55)", letterSpacing: "-0.02em" }}
+          style={{ fontSize: "clamp(36px, 8vw, 110px)", color: "rgba(255,255,255,0.55)", letterSpacing: "-0.02em" }}
         >
           Learning · Reading · Science · Math · Discovery · Play · Growth ·&nbsp;
         </span>
@@ -347,7 +357,7 @@ function MissionStatement() {
 
       <div className="mx-auto max-w-5xl px-6 py-10 sm:px-10 lg:px-16">
         <Reveal>
-          <p className="font-display text-4xl leading-tight text-white sm:text-5xl lg:text-6xl">
+          <p className="font-display text-2xl leading-tight text-white sm:text-4xl lg:text-6xl">
             The goal of Kiwo is to{" "}
             <span style={{ color: YELLOW }}>boost the joy of learning</span>{" "}
             and enhance skills for children in grades 1 to 6, while making every lesson feel like a{" "}
@@ -359,7 +369,7 @@ function MissionStatement() {
       <motion.div style={{ x: x2 }} className="whitespace-nowrap">
         <span
           className="font-display font-extrabold leading-none"
-          style={{ fontSize: "clamp(56px, 8vw, 110px)", color: "rgba(255,255,255,0.55)", letterSpacing: "-0.02em" }}
+          style={{ fontSize: "clamp(36px, 8vw, 110px)", color: "rgba(255,255,255,0.55)", letterSpacing: "-0.02em" }}
         >
           &nbsp;Adventure · Wonder · Progress · Stories · Rewards · Curiosity ·
         </span>
@@ -453,7 +463,7 @@ function FeaturesSection() {
 
 function Feature1() {
   return (
-    <div className="flex flex-col items-center gap-12 py-16 lg:flex-row lg:gap-20 lg:py-20">
+    <div className="flex flex-col items-center gap-8 py-10 lg:flex-row lg:gap-20 lg:py-20">
       <motion.div
         className="relative w-full shrink-0 lg:w-[460px]"
         style={{ aspectRatio: "3/2" }}
@@ -478,7 +488,7 @@ function Feature1() {
         </TiltImage>
       </motion.div>
       <Reveal className="flex-1">
-        <h2 className="font-display text-5xl leading-tight sm:text-6xl lg:text-7xl" style={{ color: DARK }}>
+        <h2 className="font-display text-3xl leading-tight sm:text-5xl lg:text-7xl" style={{ color: DARK }}>
           Every child<br />learns <span style={{ color: ORANGE }}>differently</span>
         </h2>
         <p className="mt-6 max-w-md text-lg leading-relaxed" style={{ color: `${DARK}58` }}>
@@ -494,7 +504,7 @@ function Feature1() {
 
 function Feature2() {
   return (
-    <div className="flex flex-col items-center gap-12 py-16 lg:flex-row-reverse lg:gap-20 lg:py-20">
+    <div className="flex flex-col items-center gap-8 py-10 lg:flex-row-reverse lg:gap-20 lg:py-20">
       <motion.div
         className="relative w-full shrink-0 lg:w-[460px]"
         style={{ aspectRatio: "3/2" }}
@@ -518,7 +528,7 @@ function Feature2() {
         </TiltImage>
       </motion.div>
       <Reveal className="flex-1">
-        <h2 className="font-display text-5xl leading-tight sm:text-6xl lg:text-7xl" style={{ color: DARK }}>
+        <h2 className="font-display text-3xl leading-tight sm:text-5xl lg:text-7xl" style={{ color: DARK }}>
           What is the <span style={{ color: TURQUOISE }}>Kiwo</span><br />learning game?
         </h2>
         <p className="mt-6 max-w-md text-lg leading-relaxed" style={{ color: `${DARK}58` }}>
@@ -534,7 +544,7 @@ function Feature2() {
 
 function Feature3() {
   return (
-    <div className="flex flex-col items-center gap-12 py-16 lg:flex-row lg:gap-20 lg:py-20">
+    <div className="flex flex-col items-center gap-8 py-10 lg:flex-row lg:gap-20 lg:py-20">
       <motion.div
         className="relative w-full shrink-0 lg:w-[460px]"
         style={{ aspectRatio: "3/2" }}
@@ -558,7 +568,7 @@ function Feature3() {
         </TiltImage>
       </motion.div>
       <Reveal className="flex-1">
-        <h2 className="font-display text-5xl leading-tight sm:text-6xl lg:text-7xl" style={{ color: DARK }}>
+        <h2 className="font-display text-3xl leading-tight sm:text-5xl lg:text-7xl" style={{ color: DARK }}>
           A <span style={{ color: ORANGE }}>Fun</span> and<br />Gamified World
         </h2>
         <p className="mt-6 max-w-md text-lg leading-relaxed" style={{ color: `${DARK}58` }}>
@@ -596,7 +606,7 @@ function Feature3() {
 
 function Feature4() {
   return (
-    <div className="flex flex-col items-center gap-12 py-16 lg:flex-row-reverse lg:gap-20 lg:py-20">
+    <div className="flex flex-col items-center gap-8 py-10 lg:flex-row-reverse lg:gap-20 lg:py-20">
       <motion.div
         className="relative w-full shrink-0 lg:w-[460px]"
         style={{ aspectRatio: "3/2" }}
@@ -620,7 +630,7 @@ function Feature4() {
         </TiltImage>
       </motion.div>
       <Reveal className="flex-1">
-        <h2 className="font-display text-5xl leading-tight sm:text-6xl lg:text-7xl" style={{ color: DARK }}>
+        <h2 className="font-display text-3xl leading-tight sm:text-5xl lg:text-7xl" style={{ color: DARK }}>
           Detailed <span style={{ color: TURQUOISE }}>statistics</span> on your child&apos;s progress!
         </h2>
         <p className="mt-6 max-w-md text-lg leading-relaxed" style={{ color: `${DARK}58` }}>
@@ -739,7 +749,7 @@ function HowItWorksSection() {
         {steps.map((step, i) => (
           <div
             key={step.num}
-            className="absolute inset-0 flex items-center px-8 sm:px-16 lg:px-28"
+            className="absolute inset-0 flex items-center px-5 sm:px-16 lg:px-28"
             style={{
               opacity: i === activeStep ? 1 : 0,
               transition: "opacity 0.35s ease",
@@ -749,17 +759,17 @@ function HowItWorksSection() {
             <div className="max-w-3xl">
               <span
                 className="block select-none font-display font-extrabold leading-none"
-                style={{ fontSize: "clamp(80px, 14vw, 170px)", color: step.numColor }}
+                style={{ fontSize: "clamp(40px, 14vw, 170px)", color: step.numColor }}
               >
                 {step.num}
               </span>
               <h2
-                className="-mt-4 font-display text-5xl leading-tight lg:text-[4.5rem]"
+                className="-mt-4 font-display text-3xl leading-tight sm:text-5xl lg:text-[4.5rem]"
                 style={{ color: step.textColor }}
               >
                 {step.title}
               </h2>
-              <p className="mt-6 max-w-lg text-xl leading-relaxed" style={{ color: step.copyColor }}>
+              <p className="mt-6 max-w-lg text-base leading-relaxed sm:text-xl" style={{ color: step.copyColor }}>
                 {step.copy}
               </p>
             </div>
@@ -820,7 +830,7 @@ function StatsSection() {
     <section className="py-24 sm:py-32" style={{ background: TURQUOISE }}>
       <div className="mx-4 sm:mx-6 lg:mx-8">
         <Reveal className="mb-16 text-center">
-          <h2 className="font-display text-4xl text-white sm:text-5xl lg:text-6xl">
+          <h2 className="font-display text-3xl text-white sm:text-4xl lg:text-6xl">
             Numbers that <span style={{ color: YELLOW }}>matter</span>
           </h2>
         </Reveal>
@@ -913,8 +923,33 @@ function SubjectsSection() {
           </p>
         </Reveal>
 
+        {/* Mobile simple grid — hidden on md+ */}
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:hidden">
+          {subjects.map((s) => (
+            <motion.div
+              key={s.title}
+              className="overflow-hidden rounded-2xl bg-white shadow-lg"
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+            >
+              <div className="relative h-32 overflow-hidden" style={{ background: s.bg }}>
+                <Image src={s.img} alt={s.title} fill className="object-cover" />
+              </div>
+              <div className="p-4">
+                <h3 className="font-display text-lg leading-tight" style={{ color: DARK }}>{s.title}</h3>
+                <p className="mt-1 text-xs leading-snug" style={{ color: `${DARK}60` }}>{s.copy}</p>
+                <div className="mt-3 flex items-center gap-1 text-xs font-extrabold" style={{ color: s.accent }}>
+                  Explore world <ArrowRight className="h-3 w-3" />
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+
         {/* Fixed-height canvas — path drawn first, pills + cards placed on top */}
-        <div ref={containerRef} className="relative mx-auto max-w-4xl" style={{ height: TOTAL_H }}>
+        <div ref={containerRef} className="relative mx-auto hidden max-w-4xl md:block" style={{ height: TOTAL_H }}>
           {layout && (
             <>
               {/* ① PATH — road with depth layers */}
@@ -1006,7 +1041,7 @@ function TestimonialsSection() {
     <section className="py-24 sm:py-32" style={{ background: YELLOW }}>
       <div className="mx-4 sm:mx-6 lg:mx-8">
         <Reveal className="mb-16 text-center">
-          <h2 className="font-display text-4xl sm:text-5xl" style={{ color: DARK }}>
+          <h2 className="font-display text-3xl sm:text-5xl" style={{ color: DARK }}>
             Families notice the <span style={{ color: ORANGE }}>difference</span>
           </h2>
         </Reveal>
@@ -1044,7 +1079,7 @@ function PricingSection() {
     <section id="pricing" className="py-24 sm:py-32" style={{ background: "#FFF3E8" }}>
       <div className="mx-4 sm:mx-6 lg:mx-8">
         <Reveal className="mb-14 text-center">
-          <h2 className="font-display text-4xl leading-tight sm:text-5xl" style={{ color: DARK }}>
+          <h2 className="font-display text-3xl leading-tight sm:text-5xl" style={{ color: DARK }}>
             Simple plans with a <span style={{ color: ORANGE }}>free trial</span> built in
           </h2>
         </Reveal>
@@ -1052,7 +1087,7 @@ function PricingSection() {
           {plans.map((plan, i) => (
             <Reveal key={plan.name} delay={i * 0.08}>
               <motion.div
-                className="flex h-full flex-col rounded-[28px] p-8"
+                className="flex h-full flex-col rounded-[28px] p-5 sm:p-8"
                 style={{ background: plan.featured ? ORANGE : "white" }}
                 whileHover={{ y: -4 }}
                 transition={{ type: "spring", stiffness: 340, damping: 24 }}
@@ -1061,7 +1096,7 @@ function PricingSection() {
                   <p className="text-xs font-extrabold uppercase tracking-widest" style={{ color: plan.featured ? "rgba(255,255,255,0.6)" : `${DARK}40` }}>{plan.name}</p>
                   {plan.featured && <span className="rounded-full bg-white/20 px-3 py-1 text-xs font-extrabold text-white">Most loved</span>}
                 </div>
-                <p className="mt-4 font-display text-5xl" style={{ color: plan.featured ? "white" : DARK }}>
+                <p className="mt-4 font-display text-3xl sm:text-5xl" style={{ color: plan.featured ? "white" : DARK }}>
                   {plan.price}
                   {plan.price !== "$0" && <span className="text-base font-body" style={{ color: plan.featured ? "rgba(255,255,255,0.5)" : `${DARK}40` }}>/mo</span>}
                 </p>
@@ -1098,14 +1133,14 @@ function CtaSection() {
     <section className="py-16" style={{ background: "white" }}>
       <div className="mx-4 sm:mx-6 lg:mx-8">
         <Reveal>
-          <div className="relative overflow-hidden rounded-[36px] px-8 py-20 text-center sm:px-14">
+          <div className="relative overflow-hidden rounded-[36px] px-5 py-12 text-center sm:px-14 sm:py-20">
             <Image src="/images/cta-bg.png" alt="" fill className="object-cover" />
             <div className="absolute inset-0" style={{ background: "rgba(124,58,237,0.82)" }} />
 
             <p className="relative text-xs font-extrabold uppercase tracking-widest text-white/70">
               You&apos;re not the only one waiting…
             </p>
-            <h2 className="relative mt-4 font-display text-4xl text-white sm:text-5xl lg:text-6xl">
+            <h2 className="relative mt-4 font-display text-3xl text-white sm:text-5xl lg:text-6xl">
               Sign up for the <span style={{ color: YELLOW }}>waitlist</span> today
             </h2>
             <p className="relative mx-auto mt-4 max-w-xl text-base leading-relaxed text-white/80 sm:text-lg">
@@ -1152,7 +1187,7 @@ function Footer() {
       <div className="pointer-events-none absolute inset-x-0 bottom-0 flex select-none items-end justify-center overflow-hidden" aria-hidden>
         <span
           className="font-display font-extrabold leading-none"
-          style={{ fontSize: "clamp(110px, 20vw, 260px)", letterSpacing: "-0.02em", color: "rgba(0,0,0,0.04)" }}
+          style={{ fontSize: "clamp(60px, 20vw, 260px)", letterSpacing: "-0.02em", color: "rgba(0,0,0,0.04)" }}
         >
           KIWO
         </span>
