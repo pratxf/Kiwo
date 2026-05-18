@@ -92,12 +92,6 @@ npm run lint     # Run ESLint
 
 ---
 
-## Deployment
-
-Kiwo is deployed on **Vercel**. Every push to `main` triggers a production deploy automatically.
-
----
-
 <div align="center">
 
 Built with care for curious kids everywhere.
