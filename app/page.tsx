@@ -280,17 +280,15 @@ function HeroSection() {
             >
               <Link
                 href="#cta"
-                className="flex items-center gap-3 rounded-full px-7 py-3.5 text-base font-extrabold outline-none"
+                className="flex items-center gap-2 rounded-full px-8 py-4 text-base font-extrabold outline-none transition-transform hover:scale-105 active:scale-95"
                 style={{
-                  background: "linear-gradient(180deg, #FFE566 0%, #FFD93D 50%, #F5C800 100%)",
+                  background: "linear-gradient(135deg, #FFE566 0%, #FFD93D 100%)",
                   color: DARK,
-                  boxShadow: "inset 0 1px 0 rgba(255,255,255,0.5), inset 0 -2px 0 rgba(0,0,0,0.12)",
+                  boxShadow: "0 4px 24px rgba(255,217,61,0.55), 0 1px 0 rgba(255,255,255,0.4) inset",
                 }}
               >
                 Start the Adventure
-                <span className="flex h-7 w-7 items-center justify-center rounded-full text-sm font-black" style={{ background: "rgba(0,0,0,0.12)" }}>
-                  →
-                </span>
+                <span className="text-lg leading-none">→</span>
               </Link>
             </motion.div>
           </motion.div>
@@ -1227,7 +1225,7 @@ function Footer() {
                 <input type="email" placeholder="Parent email" className="w-full bg-transparent text-sm font-semibold outline-none" style={{ color: DARK }} />
               </div>
               <motion.div whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.97 }}>
-                <Link href="#" className="block rounded-full px-5 py-3 text-center text-sm font-extrabold text-white" style={{ background: ORANGE }}>Join</Link>
+                <Link href="#" className="block rounded-full px-6 py-3 text-center text-sm font-extrabold transition-transform hover:scale-105 active:scale-95" style={{ background: "linear-gradient(135deg, #FFE566 0%, #FFD93D 100%)", color: DARK, boxShadow: "0 4px 18px rgba(255,217,61,0.5), 0 1px 0 rgba(255,255,255,0.4) inset" }}>Join</Link>
               </motion.div>
             </div>
           </div>
